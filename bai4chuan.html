@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 0;
+    var sum = 0;
+    function check_prime(n) {
+        let check = 1;
+        if (n < 2) {
+            return 0;
+        }
+        let i = 2;
+        while (i<n){
+            if (n % i == 0) {
+                check = 0;
+                break;
+            }
+            i++;
+        }
+        return check;
+    }
+    while (n<500){
+        n++;
+        if (check_prime(n) == 1) {
+            sum += n;
+        }
+    }
+    console.log(sum);
+</script>
+</body>
+</html>
