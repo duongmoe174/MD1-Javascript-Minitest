@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<p id="result"></p>
 <script>
     var num = 0;
     var sum = 0;
@@ -23,13 +24,13 @@
         }
         return check;
     }
-    while (num<500){
-        num++;
-        if (check_prime(n) == 1) {
+
+    for (; num < 500 ; ++num) {
+        if (check_prime(num) == 1) {
             sum += num;
         }
     }
-    console.log(sum);
+    document.getElementById("result").innerText = sum;
 </script>
 </body>
 </html>
