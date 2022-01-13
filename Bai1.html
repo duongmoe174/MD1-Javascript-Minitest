@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<input type="text" id="numbers" placeholder="Nhập số vào mảng">
+<input type="button" value="Add" id="btnAddInArray" onclick="add_element_in_array()">
+<input type="button" value="Display" id="btnDisplayArray" onclick="display_array()">
+<p id="resultAdd"></p>
+<p id="resultDisplay"></p>
+<div>
+    <button id="btnCheckEvenNumber" onclick="check_even_number()">Kiểm tra số chẵn</button>
+    <p id="resultEvenNumber"></p>
+    <p id="resultTotalEvenNumber"></p>
+</div>
+
+<script>
+    //khai báo chỉ số x = 0 và biến mảng array để input dữ liệu
+    var x = 0;
+    var array = Array();
+    function add_element_in_array() {
+        array[x] = document.getElementById("numbers").value;
+        document.getElementById("resultAdd").innerText = "Phần tử: " + array[x] + " đã được thêm tại chỉ số thứ: " + x;
+        // tăng x sau mỗi lần add thêm số vào mảng và làm trống input:
+        x++;
+        document.getElementById("numbers").value = "";
+    }
+    function display_array() {
+        let y = "Các phần tử trong mảng là: "
+        for (let i = 0; i < array.length ; i++) {
+           y += array[i] + "  ";
+        }
+        document.getElementById("resultDisplay").innerText = y;
+    }
+    function check_even_number() {
+        let count = 0;
+        let y = "Các số chắn trong mảng là: "
+        for (let i = 0; i < array.length ; i++) {
+            if (array[i] % 2 == 0) {
+                y += array[i] + "  ";
+                count ++;
+            }
+            document.getElementById("resultEvenNumber").innerText = y;
+            document.getElementById("resultTotalEvenNumber").innerText = "Tổng số chẵn có trong mảng là: " + count;
+        }
+    }
+</script>
+</body>
+</html>
